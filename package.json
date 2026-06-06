@@ -1,0 +1,23 @@
+{
+  "name": "ef-2235",
+  "version": "1.0.0",
+  "description": "EF-2235, an app to download anything on cbcresources.co.ke for free.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "electron": "electron ."
+  },
+  "keywords": [],
+  "author": "Abel Dena",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2"
+  }
+}

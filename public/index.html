@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>cbcresources Downloader</title>
+
+    <link
+      rel="stylesheet"
+      href="style.css"
+    >
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>📂 cbcresources.co.ke Downloader</h1>
+
+        <p class="subtitle">
+            Scan a webpage for documents and iframe links
+        </p>
+
+        <p class="author">
+            Made by Abel Dena
+        </p>
+
+    </div>
+
+    <!-- URL Input -->
+
+    <div class="scan-box">
+
+        <input
+            type="text"
+            id="urlInput"
+            placeholder="Example: https://cbcresources.co.ke/resource/?title=....Type=0"
+        >
+
+        <button id="scanBtn">
+            🔍 Scan
+        </button>
+
+    </div>
+
+    <!-- Loading -->
+
+    <div
+      id="loading"
+      class="loading hidden"
+    >
+
+        <div class="spinner"></div>
+
+        <p>
+            Scanning page...
+        </p>
+
+    </div>
+
+    <!-- Results Toolbar -->
+
+    <div
+      id="toolbar"
+      class="toolbar hidden"
+    >
+
+        <span id="resultCount">
+            Results Found: 0
+        </span>
+
+        <button id="copyAllBtn">
+            📋 Copy All
+        </button>
+
+    </div>
+
+    <!-- Results -->
+
+ 
+
+    <!-- Dashboard -->
+
+<div class="dashboard">
+
+    <div class="stats-card">
+
+        <h3>📊 Statistics</h3>
+
+        <p>Total Scans:
+            <span id="totalScans">0</span>
+        </p>
+
+        <p>Favorites:
+            <span id="favoriteCount">0</span>
+        </p>
+
+    </div>
+
+    <div class="provider-card">
+
+        <h3>📁 File Information</h3>
+
+        <p>
+            Provider:
+            <span id="providerName">
+                Unknown
+            </span>
+        </p>
+
+        <p>
+            File ID:
+            <span id="fileId">
+                -
+            </span>
+        </p>
+
+        <p>
+            Type:
+            <span id="fileType">
+                -
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+<div class="favorites-card">
+
+    <h3>⭐ Favorites</h3>
+
+    <div id="favoritesList">
+
+        No favorites yet.
+
+    </div>
+
+</div>
+
+<div class="history-card">
+
+    <h3>🕒 Recent Scans</h3>
+
+    <div id="historyList">
+
+        No history yet.
+
+    </div>
+
+</div>
+
+<!-- Results -->
+
+<div id="results">
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
+</script>
+
+</body>
+</html>
