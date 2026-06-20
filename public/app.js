@@ -1,19 +1,3 @@
-// =====================================================
-// URL CLEANING FUNCTION
-// =====================================================
-
-function cleanUrl(url) {
-    // Remove 'preview' from the URL
-    let cleaned = url.replace(/preview/g, '');
-    
-    // Clean up any double slashes that might result
-    cleaned = cleaned.replace(/([^:]\/)\/+/g, '$1');
-    
-    // Remove any trailing '&' or '?' characters
-    cleaned = cleaned.replace(/[&?]$/, '');
-    
-    return cleaned;
-}
 const scanBtn = document.getElementById("scanBtn");
 const urlInput = document.getElementById("urlInput");
 const loading = document.getElementById("loading");
