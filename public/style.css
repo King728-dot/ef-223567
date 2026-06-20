@@ -16,14 +16,8 @@ body {
     min-height: 100vh;
     padding: 30px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-.grabber-text {
-  color: #f4a460;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 700;
-  font-size: 1.1em;
-  text-decoration: none;
-}
+
+
 
 .grabber-text:hover {
   color: #e8903a;
