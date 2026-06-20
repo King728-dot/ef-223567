@@ -199,6 +199,47 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js");
 }
 </script>
+// ===== LOGIN FUNCTIONALITY =====
+// ✅ WORKING CODES: 2235, 6767
+<script>
+const ACCESS_CODES = ["2235", "6767"];
 
+const codeInput = document.getElementById('codeInput');
+const loginBtn = document.getElementById('loginBtn');
+const loginError = document.getElementById('loginError');
+const loginPage = document.getElementById('loginPage');
+const loginBox = document.getElementById('loginBox');
+
+function checkCode() {
+    const enteredCode = codeInput.value.trim();
+    
+    if (ACCESS_CODES.includes(enteredCode)) {
+        // Correct code - hide login and show main app
+        loginPage.style.display = 'none';
+        document.getElementById('mainApp').style.display = 'block';
+        
+        // Optional: Save to localStorage
+        localStorage.setItem('isAuthenticated', 'true');
+    } else {
+        // Wrong code - show error with shake
+        loginError.style.display = 'block';
+        loginBox.classList.add('shake');
+        codeInput.value = '';
+        codeInput.focus();
+        
+        setTimeout(() => {
+            loginBox.classList.remove('shake');
+        }, 400);
+    }
+}
+
+// Event listeners
+loginBtn.addEventListener('click', checkCode);
+codeInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        checkCode();
+    }
+});
+</script>
 </body>
 </html>
